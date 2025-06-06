@@ -9,14 +9,15 @@ let followerX = 0,
 document.addEventListener("mousemove", (e) => {
   mouseX = e.clientX;
   mouseY = e.clientY;
-  cursor.style.left = mouseX + "px";
-  cursor.style.top = mouseY + "px";
+  const cursorSize = cursor.offsetWidth;
+  cursor.style.left = mouseX - cursorSize / 2 + "px";
+  cursor.style.top = mouseY - cursorSize / 2 + "px";
 });
 
 function animateFollower() {
   const cursorSize = cursor.offsetWidth;
-  followerX += (mouseX - cursorSize / 2 - followerX) * 0.2;
-  followerY += (mouseY - cursorSize / 2 - followerY) * 0.2;
+  followerX += (mouseX - cursorSize - followerX) * 0.2;
+  followerY += (mouseY - cursorSize - followerY) * 0.2;
   cursorFollower.style.left = followerX + "px";
   cursorFollower.style.top = followerY + "px";
   requestAnimationFrame(animateFollower);
