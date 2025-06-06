@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechForge Studios | Premium Digital Solutions</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="js/home.js" type="text/javascript" defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
@@ -31,66 +32,115 @@
         </ul>
     </nav>
 
-    <main>
-        <div class="hero mt-32">
+    <main class="flex z-2  items-center justify-center p-8 min-h-screen flex-col gap-4">
+        <div class="hero max-w-[1000px] pt-16 sm:pt-8 flex flex-col justify-center items-center min-h-screen">
             <h1 class="hero-title">FUTURE IS<br>NOW</h1>
-            <p class="hero-subtitle">Premium Digital Solutions & Innovation</p>
-            <p class="hero-description">
+            <p class="hero-subtitle text-gray-400">Premium Digital Solutions & Innovation</p>
+            <p class="hero-description text-gray-500">
                 We craft extraordinary digital experiences that push the boundaries of what's possible.
-                From cutting-edge web applications to immersive user interfaces, we transform your vision into reality.
+                From cutting-edge web applications to immersive user interfaces, we transform your vision into
+                reality.
             </p>
 
-            <div class="hero-buttons mt-32">
+            <div class="hero-buttons ">
                 <a href="#" class="btn btn-primary">Start Your Project</a>
                 <a href="#" class="btn btn-secondary">View Our Work</a>
             </div>
-
-            <div class="features">
-                <div class="feature-card">
-                    <div class="feature-icon">🚀</div>
-                    <h3 class="feature-title">Lightning Fast</h3>
-                    <p class="feature-description">Optimized performance with cutting-edge technologies for blazing-fast
-                        user experiences.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">✨</div>
-                    <h3 class="feature-title">Pixel Perfect</h3>
-                    <p class="feature-description">Meticulous attention to detail ensuring every element is precisely
-                        crafted and positioned.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🎯</div>
-                    <h3 class="feature-title">Results Driven</h3>
-                    <p class="feature-description">Strategic approach focusing on measurable outcomes and business
-                        growth objectives.</p>
-                </div>
+        </div>
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">🚀</div>
+                <h3 class="feature-title">Lightning Fast</h3>
+                <p class="feature-description">Optimized performance with cutting-edge technologies for blazing-fast
+                    user experiences.</p>
             </div>
-
-            <div class="stats mb-32">
-                <div class="stat">
-                    <span class="stat-number">150+</span>
-                    <div class="stat-label">Projects Completed</div>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">98%</span>
-                    <div class="stat-label">Client Satisfaction</div>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">24/7</span>
-                    <div class="stat-label">Support Available</div>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">5+</span>
-                    <div class="stat-label">Years Experience</div>
-                </div>
+            <div class="feature-card">
+                <div class="feature-icon">✨</div>
+                <h3 class="feature-title">Pixel Perfect</h3>
+                <p class="feature-description">Meticulous attention to detail ensuring every element is precisely
+                    crafted and positioned.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3 class="feature-title">Results Driven</h3>
+                <p class="feature-description">Strategic approach focusing on measurable outcomes and business
+                    growth objectives.</p>
             </div>
         </div>
+
+        <div class="stats mb-32">
+            <div class="stat">
+                <span class="stat-number">150+</span>
+                <div class="stat-label">Projects Completed</div>
+            </div>
+            <div class="stat">
+                <span class="stat-number">98%</span>
+                <div class="stat-label">Client Satisfaction</div>
+            </div>
+            <div class="stat">
+                <span class="stat-number">24/7</span>
+                <div class="stat-label">Support Available</div>
+            </div>
+            <div class="stat">
+                <span class="stat-number">5+</span>
+                <div class="stat-label">Years Experience</div>
+            </div>
+        </div>
+
     </main>
 
     <div class="scroll-indicator">
         Scroll to explore ↓
     </div>
 
+    <!-- Footer Section -->
+    <footer class="footer glass-effect">
+        <div class="footer-content">
+            <div class="footer-section">
+                <a href="#" class="footer-logo">TechForge</a>
+                <p class="footer-tagline">Premium Digital Solutions & Innovation</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3 class="footer-heading">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3 class="footer-heading">Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Viale Mameli, Livorno</p>
+                <p><i class="fas fa-envelope"></i> info@mantovani-giacomo.com</p>
+                <p><i class="fas fa-phone"></i> +39 (333) 333-3333</p>
+            </div>
+
+            <div class="footer-section">
+                <h3 class="footer-heading">Newsletter</h3>
+                <p>Stay updated with our latest innovations</p>
+                <form class="newsletter-form ">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn-subscribe">Subscribe</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy;
+                <script>document.write(new Date().getFullYear())</script> TechForge Studios. All rights reserved.
+            </p>
+            <p>Crafted with <span class="heart">❤</span> by
+                <a href="https://mantovani-giacomo.com" target="_blank">Giacomo Mantovani</a> for the digital future
+            </p>
+        </div>
+    </footer>
 
 </body>
 

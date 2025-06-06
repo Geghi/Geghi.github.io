@@ -152,7 +152,7 @@ window.addEventListener("scroll", () => {
 
 // Preload animations
 window.addEventListener("load", () => {
-  document.body.style.opacity = "1";
+  // Remove this line: document.body.style.opacity = "1";
   setTimeout(() => {
     document.querySelector(".scroll-indicator").style.opacity = "1";
   }, 2000);
