@@ -192,24 +192,23 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Close menu when clicking on nav links
-    document.querySelectorAll("#nav-menu a").forEach((link) => {
-      link.addEventListener("click", () => {
+    // Add this after the existing hamburger click event listener
+    const navLinks = document.querySelectorAll("#nav-menu a");
+    navLinks.forEach((link) => {
+      link.addEventListener("click", function (e) {
         const navMenu = document.getElementById("nav-menu");
         const hamburger = document.getElementById("hamburger");
 
+        // Close menu immediately without animation
         navMenu.classList.remove("active");
-        navMenu.classList.add("closing");
-        navMenu.addEventListener(
-          "animationend",
-          function handler() {
-            navMenu.classList.remove("closing");
-            navMenu.classList.add("hidden");
-            navMenu.removeEventListener("animationend", handler);
-          },
-          { once: true }
-        );
-
+        navMenu.classList.add("hidden");
         hamburger.classList.remove("active");
+
+        // Prevent default only if it's an anchor link to same page
+        if (this.getAttribute("href").startsWith("#")) {
+          e.preventDefault();
+          // Add your existing smooth scroll logic here if needed
+        }
       });
     });
   }
