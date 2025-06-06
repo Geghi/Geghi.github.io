@@ -90,12 +90,18 @@ body {
   0%,
   100% {
     transform: translate(0, 0) rotate(0deg);
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
   }
   33% {
     transform: translate(30px, -30px) rotate(120deg);
+    filter: blur(40px);
+    -webkit-filter: blur(40px);
   }
   66% {
     transform: translate(-20px, 20px) rotate(240deg);
+    filter: blur(20px);
+    -webkit-filter: blur(20px);
   }
 }
 
@@ -573,7 +579,8 @@ nav {
 
 #nav-menu.active {
   animation: slideIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-  -webkit-animation: slideIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  -webkit-animation: slideIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+    forwards;
 }
 
 /* Advanced Glassmorphism */
