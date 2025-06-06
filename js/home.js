@@ -165,38 +165,51 @@ document.addEventListener("DOMContentLoaded", function () {
   const navMenu = document.getElementById("nav-menu");
 
   if (hamburger && navMenu) {
-    hamburger.addEventListener("click", function () {
-      // Toggle menu visibility
-      navMenu.classList.toggle("hidden");
-      navMenu.classList.toggle("-translate-x-full");
-      navMenu.classList.toggle("flex");
+    document.getElementById("hamburger").addEventListener("click", function () {
+      const navMenu = document.getElementById("nav-menu");
 
-      // Animate hamburger icon
-      const spans = hamburger.querySelectorAll("span");
-      spans[0].classList.toggle("rotate-45");
-      spans[0].classList.toggle("translate-y-2");
-      spans[1].classList.toggle("opacity-0");
-      spans[2].classList.toggle("-rotate-45");
-      spans[2].classList.toggle("-translate-y-2");
+      if (navMenu.classList.contains("active")) {
+        // Close menu
+        navMenu.classList.remove("active");
+        navMenu.classList.add("closing");
+        navMenu.addEventListener(
+          "animationend",
+          function handler() {
+            navMenu.classList.remove("closing");
+            navMenu.classList.add("hidden");
+            navMenu.removeEventListener("animationend", handler);
+          },
+          { once: true }
+        );
+      } else {
+        // Open menu
+        navMenu.classList.remove("hidden");
+        setTimeout(() => navMenu.classList.add("active"), 10);
+      }
+
+      // Toggle hamburger icon
+      this.classList.toggle("active");
     });
 
-    // Close menu when clicking on a link
-    const navLinks = navMenu.querySelectorAll("a");
-    navLinks.forEach((link) => {
+    // Close menu when clicking on nav links
+    document.querySelectorAll("#nav-menu a").forEach((link) => {
       link.addEventListener("click", () => {
-        if (window.innerWidth < 768) {
-          navMenu.classList.add("hidden");
-          navMenu.classList.add("-translate-x-full");
-          navMenu.classList.remove("flex");
+        const navMenu = document.getElementById("nav-menu");
+        const hamburger = document.getElementById("hamburger");
 
-          // Reset hamburger icon
-          const spans = hamburger.querySelectorAll("span");
-          spans[0].classList.remove("rotate-45");
-          spans[0].classList.remove("translate-y-2");
-          spans[1].classList.remove("opacity-0");
-          spans[2].classList.remove("-rotate-45");
-          spans[2].classList.remove("-translate-y-2");
-        }
+        navMenu.classList.remove("active");
+        navMenu.classList.add("closing");
+        navMenu.addEventListener(
+          "animationend",
+          function handler() {
+            navMenu.classList.remove("closing");
+            navMenu.classList.add("hidden");
+            navMenu.removeEventListener("animationend", handler);
+          },
+          { once: true }
+        );
+
+        hamburger.classList.remove("active");
       });
     });
   }
