@@ -153,8 +153,11 @@ nav {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 50px;
-  padding: 1rem 2rem;
-  animation: fadeIn 1s ease-out 0.5s both; /* Change to fadeIn instead of slideDown */
+  animation: fadeIn 1s ease-out 0.5s both;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
 }
 
 /* Add this new animation */
@@ -764,24 +767,6 @@ nav {
 
 /* Responsive */
 @media (max-width: 768px) {
-  .footer-content {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  nav {
-    padding: 0.8rem 1.5rem;
-  }
-
-  nav ul {
-    gap: 1rem;
-  }
-
   .hero-buttons {
     flex-direction: column;
     align-items: center;
@@ -800,5 +785,15 @@ nav {
     flex-direction: column;
     align-items: center;
     margin-top: 4rem;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
   }
 }
